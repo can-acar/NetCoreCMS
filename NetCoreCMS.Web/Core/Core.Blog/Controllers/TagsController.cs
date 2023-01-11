@@ -33,10 +33,10 @@ namespace Core.Blog.Controllers
     [AdminMenu(Name = "Blog", Order = 1)]
     public class TagsController : NccController
     {
-        NccTagService _nccTagService;
-        NccPostService _nccPostService;
-        INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly NccTagService _nccTagService;
+        readonly NccPostService _nccPostService;
+        readonly INccUserService _nccUserService;
+        readonly ILoggerFactory _loggerFactory;
 
         public TagsController(NccTagService nccTagService,NccPostService nccPostService, INccUserService nccUserService, ILoggerFactory loggerFactory)
         {

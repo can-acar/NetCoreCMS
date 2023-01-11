@@ -34,11 +34,11 @@ namespace Core.Blog.Controllers
     [AdminMenu(Name = "Blog", Order = 1)]
     public class CategoryController : NccController
     {
-        NccCategoryService _nccCategoryService;
-        NccCategoryDetailsService _nccCategoryDetailsService;
-        NccPostService _nccPostService;
-        INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly NccCategoryService _nccCategoryService;
+        readonly NccCategoryDetailsService _nccCategoryDetailsService;
+        readonly NccPostService _nccPostService;
+        readonly INccUserService _nccUserService;
+        readonly ILoggerFactory _loggerFactory;
         private readonly IMemoryCache _cache;
 
         public CategoryController(NccCategoryService nccCategoryService, NccCategoryDetailsService nccCategoryDetailsService, NccPostService nccPostService, INccUserService nccUserService, ILoggerFactory loggerFactory, IMemoryCache memoryCache)

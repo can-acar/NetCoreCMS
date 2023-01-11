@@ -9,7 +9,7 @@ namespace NetCoreCMS.Framework.Core.Mvc.Filters
     public class NccLoggerFilter : IActionFilter
     {
         public int Order { get; set; }
-        private ILogger _logger;
+        private readonly ILogger _logger;
 
         public NccLoggerFilter(ILoggerFactory loggerFactory)
         {

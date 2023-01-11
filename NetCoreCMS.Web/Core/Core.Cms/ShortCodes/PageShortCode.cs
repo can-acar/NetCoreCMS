@@ -15,7 +15,7 @@ namespace NetCoreCCore.Cms.ShortCodes
 {
     public class PageShortCode : BaseShortCode
     {
-        NccPageService _nccPageService;
+        readonly NccPageService _nccPageService;
 
         public PageShortCode(NccPageService nccPageService) : base(typeof(CmsPageController), "Page", "ShortCodes/PageRender")
         {

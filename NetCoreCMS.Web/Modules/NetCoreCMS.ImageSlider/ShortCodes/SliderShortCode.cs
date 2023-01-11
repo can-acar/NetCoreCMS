@@ -16,7 +16,7 @@ namespace NetCoreCMS.ImageSlider.ShortCodes
 {
     public class SliderShortCode : BaseShortCode
     {
-        NccImageSliderService _nccImageSliderService;
+        readonly NccImageSliderService _nccImageSliderService;
 
         public SliderShortCode(NccImageSliderService nccImageSliderService) : base(typeof(ImageSliderWidgetController), "NccImageSlider", "ShortCodes/ImageSlider")
         {

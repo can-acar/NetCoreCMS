@@ -19,7 +19,7 @@ namespace Core.Blog.Widgets
 {
     public class RecentCommentsWidget : Widget
     {
-        NccCommentsService _nccCommentsService;        
+        readonly NccCommentsService _nccCommentsService;        
         int CommentsCount = 5;
 
         public RecentCommentsWidget(            

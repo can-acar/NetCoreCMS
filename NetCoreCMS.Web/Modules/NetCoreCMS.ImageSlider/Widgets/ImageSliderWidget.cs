@@ -17,7 +17,7 @@ namespace NetCoreCMS.ImageSlider.Widgets
 {
     public class ImageSliderWidget : Widget
     {
-        NccImageSliderService _imageSliderService;        
+        readonly NccImageSliderService _imageSliderService;        
         string selectedImageSliderName = "";
 
         public ImageSliderWidget(NccImageSliderService imageSliderService) : base(

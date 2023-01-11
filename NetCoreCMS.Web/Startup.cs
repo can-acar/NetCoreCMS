@@ -59,11 +59,11 @@ namespace NetCoreCMS.Web
     public class Startup
     {
         private IHostingEnvironment _hostingEnvironment;
-        ModuleManager _moduleManager;
-        ThemeManager _themeManager;
-        NetCoreStartup _startup;
+        readonly ModuleManager _moduleManager;
+        readonly ThemeManager _themeManager;
+        readonly NetCoreStartup _startup;
         IMvcBuilder _mvcBuilder;
-        SetupConfig _setupConfig;
+        readonly SetupConfig _setupConfig;
         IServiceCollection _services;
         IServiceProvider _serviceProvider;
 

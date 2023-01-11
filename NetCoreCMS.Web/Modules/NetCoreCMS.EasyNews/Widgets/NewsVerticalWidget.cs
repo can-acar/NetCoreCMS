@@ -20,7 +20,7 @@ namespace NetCoreCMS.EasyNews.Widgets
 {
     public class NewsVerticalWidget : Widget
     {
-        NewsService _neNewsService;        
+        readonly NewsService _neNewsService;        
         int newsCount = 10;
 
         string headerTitle = "";

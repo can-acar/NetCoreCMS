@@ -26,17 +26,17 @@ namespace Core.Admin.Controllers
     [AdminMenu( IsVisible = false, Name = "Dashboard", IconCls = "fa-cogs", Order = 99)]
     public class DashboardController : NccController
     {
-        NccWebSiteService _webSiteService;
-        NccPageService _pageService;
-        NccPostService _postService;
+        readonly NccWebSiteService _webSiteService;
+        readonly NccPageService _pageService;
+        readonly NccPostService _postService;
         NccCategoryService _categoryService;
         INccSettingsService _settingsService;
         RoleManager<NccRole> _roleManager;
-        UserManager<NccUser> _userManager;
+        readonly UserManager<NccUser> _userManager;
         NccStartupService _startupService;
         IHostingEnvironment _hostingEnvironment;
         IConfiguration _configuration;
-        NccModuleService _moduleService;
+        readonly NccModuleService _moduleService;
         private ILogger<AdminController> _logger;
 
         public DashboardController(NccWebSiteService nccWebSiteService, NccPageService pageService, NccPostService postService, NccCategoryService categoryService, INccSettingsService settingsService, RoleManager<NccRole> roleManager, UserManager<NccUser> userManager, NccStartupService startupService, IConfiguration configuration, IHostingEnvironment hostingEnv,

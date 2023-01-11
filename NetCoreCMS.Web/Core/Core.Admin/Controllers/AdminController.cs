@@ -40,14 +40,14 @@ namespace Core.Admin.Controllers
     [AdminMenu(Name = "Settings", IconCls = "fa-cogs", Order = 7)]
     public class AdminController : NccController
     {
-        NccWebSiteService _webSiteService;
-        NccPageService _pageService;
-        NccPostService _postService;
-        NccCategoryService _categoryService;
-        INccSettingsService _settingsService;
+        readonly NccWebSiteService _webSiteService;
+        readonly NccPageService _pageService;
+        readonly NccPostService _postService;
+        readonly NccCategoryService _categoryService;
+        readonly INccSettingsService _settingsService;
         RoleManager<NccRole> _roleManager;
         UserManager<NccUser> _userManager;
-        NccStartupService _startupService;
+        readonly NccStartupService _startupService;
         IHostingEnvironment _hostingEnvironment;
         IConfiguration _configuration;
         NccModuleService _moduleService;

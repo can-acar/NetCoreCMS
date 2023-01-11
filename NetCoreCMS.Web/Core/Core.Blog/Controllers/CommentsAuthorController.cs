@@ -33,11 +33,12 @@ namespace Core.Blog.Controllers
     public class CommentsAuthorController : NccController
     {
         #region Initialization
-        NccCommentsService _nccCommentsService;
+
+        readonly NccCommentsService _nccCommentsService;
         NccPostService _postService;
 
-        INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly INccUserService _nccUserService;
+        readonly ILoggerFactory _loggerFactory;
 
         UserManager<NccUser> _userManager;
 

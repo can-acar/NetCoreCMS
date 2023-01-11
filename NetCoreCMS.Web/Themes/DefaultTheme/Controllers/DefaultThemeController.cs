@@ -20,7 +20,7 @@ namespace DefaultTheme.Controllers
 {
     public class DefaultThemeController : NccController
     {
-        Dictionary<string, string> style = new Dictionary<string, string>() { { "light.css", "Light" }, { "dark.css", "Dark" } };
+        readonly Dictionary<string, string> style = new Dictionary<string, string>() { { "light.css", "Light" }, { "dark.css", "Dark" } };
         public DefaultThemeController()
         {
 

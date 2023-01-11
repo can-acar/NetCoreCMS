@@ -19,8 +19,8 @@ namespace Core.Blog.Widgets
 {
     public class BlogPostSliderWidget : Widget
     {
-        NccCategoryService _nccCategoryService;
-        NccPostService _nccPostService;
+        readonly NccCategoryService _nccCategoryService;
+        readonly NccPostService _nccPostService;
         public BlogPostSliderViewModel bpsViewModel = new BlogPostSliderViewModel();
 
         public BlogPostSliderWidget(NccCategoryService nccCategoryService, NccPostService nccPostService) : base(

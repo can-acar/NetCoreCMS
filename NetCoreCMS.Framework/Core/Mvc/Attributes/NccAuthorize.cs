@@ -20,8 +20,8 @@ namespace NetCoreCMS.Framework.Core.Mvc.Attributes
     public class NccAuthorize : Attribute
     {
         private string _handlerClassName;
-        private string _requirement;
-        private string _values;
+        private readonly string _requirement;
+        private readonly string _values;
         private string[] _requirementList;
         private string[] _valueList;
 

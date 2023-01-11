@@ -31,7 +31,7 @@ namespace NetCoreCMS.Framework.Core.App
         public static IServiceProvider ServiceProvider { get; set; }
 
         private static bool _isShutdown = false;
-        private static int _heartBitRate = 2000;        
+        private static readonly int _heartBitRate = 2000;        
         private static Thread _starterThread;
         
         public static void StartForerver(Thread starterThread, ParameterizedThreadStart webHostStarter, string currentDirectory, string[] args)

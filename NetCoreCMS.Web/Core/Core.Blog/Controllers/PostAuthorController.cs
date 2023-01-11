@@ -32,15 +32,16 @@ namespace Core.Blog.Controllers
     public class PostAuthorController : NccController
     {
         #region Initialization
-        NccPostService _nccPostService;
-        NccPostDetailsService _nccPostDetailsService;
-        NccCategoryService _nccCategoryService;
-        NccTagService _nccTagService;
+
+        readonly NccPostService _nccPostService;
+        readonly NccPostDetailsService _nccPostDetailsService;
+        readonly NccCategoryService _nccCategoryService;
+        readonly NccTagService _nccTagService;
         NccShortCodeProvider _nccShortCodeProvider;
 
-        IMediator _mediator;
+        readonly IMediator _mediator;
         INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly ILoggerFactory _loggerFactory;
 
         public PostAuthorController(NccPostService nccPostService, NccPostDetailsService nccPostDetailsService, NccCategoryService nccCategoryService, NccTagService nccTagService, INccUserService nccUserService, NccShortCodeProvider nccShortCodeProvider, IMediator mediator, ILoggerFactory loggerFactory)
         {

@@ -33,13 +33,14 @@ namespace Core.Blog.Controllers
     public class CommentsController : NccController
     {
         #region Initialization
-        NccCommentsService _nccCommentsService;
-        NccPostService _postService;
 
-        INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly NccCommentsService _nccCommentsService;
+        readonly NccPostService _postService;
 
-        UserManager<NccUser> _userManager;
+        readonly INccUserService _nccUserService;
+        readonly ILoggerFactory _loggerFactory;
+
+        readonly UserManager<NccUser> _userManager;
 
         public CommentsController(NccCommentsService nccCommentsService, NccPostService postService, INccUserService nccUserService, ILoggerFactory loggerFactory, UserManager<NccUser> UserManager)
         {

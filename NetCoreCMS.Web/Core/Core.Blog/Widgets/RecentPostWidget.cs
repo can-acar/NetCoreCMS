@@ -18,7 +18,7 @@ namespace Core.Blog.Widgets
 {
     public class RecentPostWidget : Widget
     {
-        NccPostService _nccPostService;        
+        readonly NccPostService _nccPostService;        
         int PostCount = 5;
         bool IsDateShow = false;
 

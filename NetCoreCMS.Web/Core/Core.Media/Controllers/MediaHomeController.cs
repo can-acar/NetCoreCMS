@@ -31,11 +31,11 @@ namespace Core.Media.Controllers
     {
         #region Initialization
 
-        private IHostingEnvironment _env;
+        private readonly IHostingEnvironment _env;
         private readonly string _imageRoot = "\\media\\Images\\";
         private readonly string _imagePathPrefix = "/media/Images/";
         private readonly string _imageUploadPrefix = "media\\Images\\";
-        string[] _allowedImageExtentions = { ".jpg", ".jpeg", ".bmp", ".png", ".gif", ".ico", ".svg" };
+        readonly string[] _allowedImageExtentions = { ".jpg", ".jpeg", ".bmp", ".png", ".gif", ".ico", ".svg" };
 
         private readonly string _fileRoot = "\\media\\Files\\";
         private readonly string _filePathPrefix = "/media/Files/";

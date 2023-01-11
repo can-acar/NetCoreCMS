@@ -42,7 +42,7 @@ namespace NetCoreCMS.Framework.Setup
             LoadSetup();
         }
 
-        private static string _configFileName = "setup.json";
+        private static readonly string _configFileName = "setup.json";
         public static bool IsDbCreateComplete { get; set; }
         public static bool IsAdminCreateComplete { get; set; }
         public static string SelectedDatabase { get; set; }

@@ -36,11 +36,12 @@ namespace Core.Cms.Controllers
     public class CmsPageController : NccController
     {
         #region Initialization
-        NccPageService _pageService;
-        NccPageDetailsService _pageDetailsService;
-        NccShortCodeProvider _nccShortCodeProvider;
-        private INccUserService _nccUserService;
-        IMediator _mediator;
+
+        readonly NccPageService _pageService;
+        readonly NccPageDetailsService _pageDetailsService;
+        readonly NccShortCodeProvider _nccShortCodeProvider;
+        private readonly INccUserService _nccUserService;
+        readonly IMediator _mediator;
 
         public CmsPageController(NccPageService pageService, NccPageDetailsService nccPageDetailsService, NccShortCodeProvider nccShortCodeProvider, IMediator mediator, INccUserService nccUserService, ILoggerFactory factory)
         {

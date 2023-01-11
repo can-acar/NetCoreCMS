@@ -16,7 +16,7 @@ namespace NetCoreCMS.Framework.i18n
     public class NccStringLocalizer<ResourceT> : StringLocalizer<ResourceT>
     {
         private NccTranslator _nccTranslator;        
-        private NccLanguageDetector _nccLanguageDetector;
+        private readonly NccLanguageDetector _nccLanguageDetector;
 
         public NccStringLocalizer(IStringLocalizerFactory factory, IHttpContextAccessor httpContextAccessor) : base(factory)
         {

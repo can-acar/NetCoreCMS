@@ -24,7 +24,7 @@ namespace NetCoreCMS.ImageSlider.Controllers
     public class ImageSliderHomeController : NccController
     {
         #region Initialization
-        private NccImageSliderService _nccImageSliderService;      
+        private readonly NccImageSliderService _nccImageSliderService;      
         private List<NccImageSliderItem> nccImageSliderItemList = new List<NccImageSliderItem>();
         public ImageSliderHomeController(INccSettingsService nccSettingsService, ILoggerFactory factory, NccImageSliderService nccImageSliderService)
         {

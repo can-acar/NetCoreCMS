@@ -18,7 +18,7 @@ namespace Core.Blog.Widgets
 {
     public class TagCloudWidget : Widget
     {
-        NccTagService _nccTagService;       
+        readonly NccTagService _nccTagService;       
         bool ShowTagHasPost = false;
         bool ShowPostCount = false;
 

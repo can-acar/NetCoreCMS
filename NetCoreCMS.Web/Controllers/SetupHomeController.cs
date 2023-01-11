@@ -33,9 +33,8 @@ namespace NetCoreCMS.Core.Modules.Setup.Controllers
 {
     [AllowAnonymous]
     public class SetupHomeController : NccController
-    { 
-
-        IHttpContextAccessor _httpContextAccessor;
+    {
+        readonly IHttpContextAccessor _httpContextAccessor;
         ILoggerFactory _loggerFactory;
 
         public SetupHomeController(IHttpContextAccessor httpContextAccessor, ILoggerFactory loggerFactory)

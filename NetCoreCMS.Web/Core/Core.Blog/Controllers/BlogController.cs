@@ -31,7 +31,7 @@ namespace Core.Blog.Controllers
     {
         NccPostService _nccPostService;
         INccUserService _nccUserService;
-        ILoggerFactory _loggerFactory;
+        readonly ILoggerFactory _loggerFactory;
 
         public BlogController(NccPostService nccPostService, INccUserService nccUserService, ILoggerFactory loggerFactory)
         {

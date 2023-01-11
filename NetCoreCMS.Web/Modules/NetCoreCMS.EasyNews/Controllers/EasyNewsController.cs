@@ -32,8 +32,8 @@ namespace NetCoreCMS.EasyNews.Controllers
     public class EasyNewsController : NccController
     {
         #region Initialization
-        private NewsService _newsService;
-        private CategoryService _categoryService;
+        private readonly NewsService _newsService;
+        private readonly CategoryService _categoryService;
 
         public EasyNewsController(ILoggerFactory factory, NewsService newsService, CategoryService categoryService)
         {

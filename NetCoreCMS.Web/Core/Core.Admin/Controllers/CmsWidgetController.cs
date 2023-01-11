@@ -24,8 +24,8 @@ namespace Core.Admin.Controllers
     [AdminMenu(Name = "Appearance", IconCls = "fa-tasks", Order = 4)]
     public class CmsWidgetController : NccController
     {
-        NccWebSiteWidgetService _nccWebSiteWidgetService;
-        NccWebSiteService _nccWebSiteService;
+        readonly NccWebSiteWidgetService _nccWebSiteWidgetService;
+        readonly NccWebSiteService _nccWebSiteService;
         ILoggerFactory _loggerFactory;
         private ILogger<CmsWidgetController> _logger;
 

@@ -23,7 +23,7 @@ namespace Core.Media.Services
     {
         #region Initialization
         private readonly ILogger _logger;
-        private IHostingEnvironment _env;
+        private readonly IHostingEnvironment _env;
 
         public MediaServices(ILoggerFactory factory, IHostingEnvironment env)
         {
@@ -34,7 +34,7 @@ namespace Core.Media.Services
         private readonly string _imageRoot = "\\media\\Images\\";
         private readonly string _imagePathPrefix = "/media/Images/";
         private readonly string _imageUploadPrefix = "media\\Images\\";
-        private string[] _allowedImageExtentions = { ".jpg", ".jpeg", ".bmp", ".png", ".gif", };
+        private readonly string[] _allowedImageExtentions = { ".jpg", ".jpeg", ".bmp", ".png", ".gif", };
         #endregion
 
         public string SaveImage(IFormFile file)

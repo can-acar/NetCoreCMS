@@ -28,7 +28,7 @@ namespace NetCoreCMS.Framework.Core.Mvc.Views.TagHelpers
     public class LanguageEnabledAnchorTagHelper : TagHelper
     {
         IHttpContextAccessor _httpContextAccessor;
-        NccLanguageDetector _nccLanguageDetector;
+        readonly NccLanguageDetector _nccLanguageDetector;
         public override int Order { get; } = int.MaxValue;
 
         [HtmlAttributeName("asp-for")]

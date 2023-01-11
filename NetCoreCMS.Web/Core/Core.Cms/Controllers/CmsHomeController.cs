@@ -28,7 +28,7 @@ namespace Core.Cms.Controllers
     public class CmsHomeController : NccController
     {
         private NccPageService _pageService;
-        private NccPostService _postService;
+        private readonly NccPostService _postService;
 
         public CmsHomeController(NccPageService pageService, NccPostService nccPostService, ILoggerFactory factory)
         {

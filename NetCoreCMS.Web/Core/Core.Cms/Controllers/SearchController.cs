@@ -11,7 +11,7 @@ namespace Core.Cms.Controllers
 {
     public class SearchController : NccController
     {
-        NccPageService _pageService;
+        readonly NccPageService _pageService;
 
         public SearchController(NccPageService pageService, ILoggerFactory factory)
         {

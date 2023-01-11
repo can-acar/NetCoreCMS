@@ -286,7 +286,7 @@ namespace MarkdownSharp
         private readonly Dictionary<string, string> _htmlBlocks = new Dictionary<string, string>();
 
         private int _listLevel;
-        private static string AutoLinkPreventionMarker = "\x1AP"; // temporarily replaces "://" where auto-linking shouldn't happen;
+        private static readonly string AutoLinkPreventionMarker = "\x1AP"; // temporarily replaces "://" where auto-linking shouldn't happen;
 
         /// <summary>
         /// In the static constuctor we'll initialize what stays the same across all transforms.
@@ -1144,7 +1144,7 @@ namespace MarkdownSharp
             return _horizontalRules.Replace(text, "<hr" + _emptyElementSuffix + "\n");
         }
 
-        private static string _wholeList = string.Format(@"
+        private static readonly string _wholeList = string.Format(@"
             (                               # $1 = whole list
               (                             # $2
                 [ ]{{0,{1}}}

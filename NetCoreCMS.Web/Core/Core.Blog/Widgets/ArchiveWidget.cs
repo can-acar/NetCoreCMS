@@ -18,7 +18,7 @@ namespace Core.Blog.Widgets
 {
     public class ArchiveWidget : Widget
     {
-        NccPostService _nccPostService;
+        readonly NccPostService _nccPostService;
         
         bool ShowPostCount = false;
         bool DisplayOrder = true;

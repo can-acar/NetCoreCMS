@@ -39,16 +39,17 @@ namespace NetCoreCMS.DemoData.Controllers
         //private INccSettingsService _nccSettingsService;
 
         RoleManager<NccRole> _roleManager;
-        UserManager<NccUser> _userManager;
+
+        readonly UserManager<NccUser> _userManager;
         //INccUserService _nccUserService;
-        NccPermissionService _nccPermissionService;
+        readonly NccPermissionService _nccPermissionService;
 
-        NccPageService _pageService;
+        readonly NccPageService _pageService;
 
-        NccCategoryService _categoryService;
-        NccTagService _tagService;
-        NccPostService _postService;
-        NccCommentsService _commentsService;
+        readonly NccCategoryService _categoryService;
+        readonly NccTagService _tagService;
+        readonly NccPostService _postService;
+        readonly NccCommentsService _commentsService;
 
         static readonly Random rnd = new Random();
 
@@ -67,7 +68,8 @@ namespace NetCoreCMS.DemoData.Controllers
             _commentsService = commentsService;
         }
         #region Demo Text
-        string enDemoContent = @"<h2>What is Lorem Ipsum?</h2>
+
+        readonly string enDemoContent = @"<h2>What is Lorem Ipsum?</h2>
 <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 <p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
@@ -76,7 +78,8 @@ namespace NetCoreCMS.DemoData.Controllers
 <p>Nunc mattis enim ut tellus.Dapibus ultrices in iaculis nunc sed augue lacus.Semper eget duis at tellus at urna condimentum. Placerat duis ultricies lacus sed turpis. Habitant morbi tristique senectus et netus et.Sollicitudin ac orci phasellus egestas tellus rutrum tellus. Nunc consequat interdum varius sit amet mattis vulputate enim.Massa tempor nec feugiat nisl pretium fusce id velit.Aliquam purus sit amet luctus venenatis. Fermentum posuere urna nec tincidunt.Scelerisque mauris pellentesque pulvinar pellentesque.Est placerat in egestas erat imperdiet.Ut eu sem integer vitae justo eget magna fermentum iaculis. Venenatis tellus in metus vulputate eu scelerisque felis.Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis. Amet purus gravida quis blandit turpis cursus in.</p>
 <p>At imperdiet dui accumsan sit amet. Pretium vulputate sapien nec sagittis aliquam malesuada.Enim nunc faucibus a pellentesque sit amet porttitor. Bibendum neque egestas congue quisque egestas. Nunc pulvinar sapien et ligula.Odio aenean sed adipiscing diam donec adipiscing tristique risus nec. Ut pharetra sit amet aliquam id diam maecenas. Nulla aliquet porttitor lacus luctus.Scelerisque viverra mauris in aliquam sem fringilla.Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Diam maecenas sed enim ut sem.</p>
 <p>Ipsum dolor sit amet consectetur.Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida.Nisl suscipit adipiscing bibendum est ultricies integer quis. Sed augue lacus viverra vitae congue eu.Nulla pellentesque dignissim enim sit amet venenatis urna. Et magnis dis parturient montes nascetur ridiculus mus mauris.Aliquet bibendum enim facilisis gravida neque convallis.At risus viverra adipiscing at in tellus integer. Dignissim convallis aenean et tortor at. Vulputate odio ut enim blandit volutpat maecenas.Nullam vehicula ipsum a arcu.Ac turpis egestas sed tempus urna. Faucibus vitae aliquet nec ullamcorper.</p>";
-        string bnDemoContent = @"<h2>লরমেম ইপ্সাম কি?</h2>
+
+        readonly string bnDemoContent = @"<h2>লরমেম ইপ্সাম কি?</h2>
 <p><strong>Lorem Ipsum</strong> শুধু মুদ্রণ এবং typesetting শিল্পের ডামি টেক্সট। 1500 এর দশক থেকে লরমেম ইপসাম শিল্পের আদর্শ ডামি টেক্সট হয়ে উঠেছে, যখন একটি অজানা মুদ্রণযন্ত্রটি একটি গলি টাইপ করে এবং এটি একটি টাইপ নমুনা বই তৈরি করতে scrambled। এটা শুধুমাত্র পাঁচ শতাব্দী ধরেই বেঁচে গেছে, কিন্তু ইলেকট্রনিক টাইপসেটিংয়ের মধ্যেও লাফানো, মূলত অপরিবর্তিত রয়েছে। এটি লরমেম ইপ্সাম প্যাসেজগুলির সাথে লেটাসেট পত্রকের মুক্তির সাথে 1960 সালে জনপ্রিয়তা লাভ করে এবং সম্প্রতি ডেস্কটপ পাবলিশিং সফটওয়্যারের মত অ্যালডাস প্যাটারমেকার যেমন লরমেম ইপসামের সংস্করণ সহ।</p>
 <p><strong>Lorem Ipsum</strong> শুধু মুদ্রণ এবং typesetting শিল্পের ডামি টেক্সট। 1500 এর দশক থেকে লরমেম ইপসাম শিল্পের আদর্শ ডামি টেক্সট হয়ে উঠেছে, যখন একটি অজানা মুদ্রণযন্ত্রটি একটি গলি টাইপ করে এবং এটি একটি টাইপ নমুনা বই তৈরি করতে scrambled। এটা শুধুমাত্র পাঁচ শতাব্দী ধরেই বেঁচে গেছে, কিন্তু ইলেকট্রনিক টাইপসেটিংয়ের মধ্যেও লাফানো, মূলত অপরিবর্তিত রয়েছে। এটি লরমেম ইপ্সাম প্যাসেজগুলির সাথে লেটাসেট পত্রকের মুক্তির সাথে 1960 সালে জনপ্রিয়তা লাভ করে এবং সম্প্রতি ডেস্কটপ পাবলিশিং সফটওয়্যারের মত অ্যালডাস প্যাটারমেকার যেমন লরমেম ইপসামের সংস্করণ সহ।</p>
 <p><strong>Lorem Ipsum</strong> শুধু মুদ্রণ এবং typesetting শিল্পের ডামি টেক্সট। 1500 এর দশক থেকে লরমেম ইপসাম শিল্পের আদর্শ ডামি টেক্সট হয়ে উঠেছে, যখন একটি অজানা মুদ্রণযন্ত্রটি একটি গলি টাইপ করে এবং এটি একটি টাইপ নমুনা বই তৈরি করতে scrambled। এটা শুধুমাত্র পাঁচ শতাব্দী ধরেই বেঁচে গেছে, কিন্তু ইলেকট্রনিক টাইপসেটিংয়ের মধ্যেও লাফানো, মূলত অপরিবর্তিত রয়েছে। এটি লরমেম ইপ্সাম প্যাসেজগুলির সাথে লেটাসেট পত্রকের মুক্তির সাথে 1960 সালে জনপ্রিয়তা লাভ করে এবং সম্প্রতি ডেস্কটপ পাবলিশিং সফটওয়্যারের মত অ্যালডাস প্যাটারমেকার যেমন লরমেম ইপসামের সংস্করণ সহ।</p>
@@ -85,7 +88,8 @@ namespace NetCoreCMS.DemoData.Controllers
 <p>এখন আপনি কি করতে চান? আইপ্যাড এবং নমনীয় আইপ্যাড মিনি সেগরি প্যাটার্নে দাপিয়ে বেড়ানোর সময় এগুলি তৈরি করা হয়। প্ল্যাটফর্মে দুটি উচ্চ গতিসম্পন্ন ট্র্যাক বাস্তবসম্মত মস্তিষ্কের চশমা এবং পরিচিত এবং স্বেচ্ছাসেবক সংস্থা বা আধ্যাত্মিক ফৌজদারী মামলা দায়ের করা হয়। এখন পর্যন্ত এটি জন্য একটি চটকদার জন্য এটি একটি ভাল চর্চা আছে। মাথার সাময়িক ভ্যাকুয়ামের জন্য এটি ব্যবহৃত হয় একটি নির্দিষ্ট সময়সীমার জন্য টেনিস প্যাটার্ন গর্ত ইত্যাদি বোজানো স্কলারিকিউ ম্যরিস পল্লিঙ্কুল পলভিনের পিটারসেক এটি আগে কখনও কখনও ছিল না। শুধুমাত্র একটি পূর্ণাঙ্গ তালিকা থেকে শুরু করতে পারেন ভ্যালেনটাইনস ভ্যালুগুয়েট অফ দ্য স্কলারস ফ্লেসিস Ullamcorper ইস্তাম্বুল এমনকি সহজে জন্য সহজে স্থানান্তর করা হয়। আমন্ত্রিত প্রসূতির বুদ্ধিমত্তার কারন।</p>
 <p>দুর্নীতিপরায়ণ প্ল্যাটফর্মের উপর আম্পায়ার কোন পুরুষ কোন পুরুষ বা স্ত্রী পুরুষ আমি এখন একটি পোর্টেনিপেটর এবং পোর্টেটার সরবরাহকারী একটি নমনীয়। Bibendum এবং কখনও কখনও কখনও কখনও কখনও কখনও নুনকির চিতা আপনি যদি আমাদের পণ্য কোন মডেল আগ্রহী, আপনি যদি আমাদের ডিরেক্টরির মধ্যে প্রদর্শিত আগ্রহী? আপনি যদি আমাদের ডিরেক্টরির মধ্যে প্রদর্শিত আগ্রহী? স্ক্রোলার স্ক্রিনে কোনও ফাঁকা জায়গা সাইন আপ করার জন্য সড়ক ঘোড়দৌড় চলাচলের জন্য সহজেই একটি গাড়ি আপনি যদি আমাদের ডিরেক্টরির মধ্যে প্রদর্শিত আগ্রহী?</p>
 <p>ইপসাম ডিজাইন আমরা এখন সহজেই আমাদের জন্য সহজেই একটি বিকাশের জন্য প্রস্তুত করা হয়। Nil সম্ভাব্য পরামিতি উচ্চতর সংখ্যা পূর্ণসংখ্যা হয় আমরা আপনার কাছ থেকে আসা এবং আপনি আপনার ইচ্ছার জন্য অনুসন্ধান করা যেতে পারে। নল্লা পল্লীগিরির জন্য এটি নিখরচায় স্থানান্তরিত হয়। এবং মস্তিষ্কের মস্তিষ্কের মস্তিষ্কের মস্তিষ্কের মস্তিস্ক অভিযান এবং অভিযান পূর্ণসংখ্যায় পূর্ণ সংখ্যা হিসাবে এটি চালু হয় ডাইনোসর এবং অন্যান্য উপর আক্রমন অভিযুক্ত ভলিউমেটিক মাতৃভাষার বিকাশের জন্য মজাদার রাস্তার রাস্তার উপর একটি রাস্তা এসি শুরু কিন্তু সময় সময় এটি। শয়তান তার কল্পনাশূন্যতা সম্পর্কে জিজ্ঞাসা।</p>";
-        string commentsDemoContent = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+
+        readonly string commentsDemoContent = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industries standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
 Lorem Ipsum শুধু মুদ্রণ এবং typesetting শিল্পের ডামি টেক্সট। 1500 এর দশক থেকে লরমেম ইপসাম শিল্পের আদর্শ ডামি টেক্সট হয়ে উঠেছে, যখন একটি অজানা মুদ্রণযন্ত্রটি একটি গলি টাইপ করে এবং এটি একটি টাইপ নমুনা বই তৈরি করতে scrambled। এটা শুধুমাত্র পাঁচ শতাব্দী ধরেই বেঁচে গেছে, কিন্তু ইলেকট্রনিক টাইপসেটিংয়ের মধ্যেও লাফানো, মূলত অপরিবর্তিত রয়েছে। এটি লরমেম ইপ্সাম প্যাসেজগুলির সাথে লেটাসেট পত্রকের মুক্তির সাথে 1960 সালে জনপ্রিয়তা লাভ করে এবং সম্প্রতি ডেস্কটপ পাবলিশিং সফটওয়্যারের মত অ্যালডাস প্যাটারমেকার যেমন লরমেম ইপসামের সংস্করণ সহ।";
         #endregion
         #endregion

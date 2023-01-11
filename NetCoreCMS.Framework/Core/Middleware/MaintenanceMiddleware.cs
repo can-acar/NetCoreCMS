@@ -68,8 +68,8 @@ namespace NetCoreCMS.Framework.Core.Middleware
     public class MaintenanceWindow
     {
 
-        private Func<bool> enabledFunc;
-        private byte[] response;
+        private readonly Func<bool> enabledFunc;
+        private readonly byte[] response;
 
         public MaintenanceWindow(Func<bool> enabledFunc, byte[] response)
         {

@@ -24,7 +24,7 @@ namespace NetCoreCMS.Web
     public class Program
     {
         private static IWebHost nccWebHost;
-        private static Thread starterThread = new Thread(StartApp);
+        private static readonly Thread starterThread = new Thread(StartApp);
         
         public static void Main(string[] args)
         {

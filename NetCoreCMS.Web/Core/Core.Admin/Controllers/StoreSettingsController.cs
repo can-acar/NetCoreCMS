@@ -22,9 +22,9 @@ namespace Core.Admin.Controllers
     [AdminMenu(Name = "Module", IconCls = "fa-tasks", Order = 6)]
     public class StoreSettingsController : NccController
     {
-        INccSettingsService _nccSettingsService;
+        readonly INccSettingsService _nccSettingsService;
         private ILogger<StoreSettingsController> _logger;
-        StoreSettings storeSettings;
+        readonly StoreSettings storeSettings;
         public StoreSettingsController(INccSettingsService nccSettingsService, ILoggerFactory factory)
         {
             _nccSettingsService = nccSettingsService;

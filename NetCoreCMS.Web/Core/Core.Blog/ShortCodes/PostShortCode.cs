@@ -15,7 +15,7 @@ namespace Core.Blog.ShortCodes
 {
     public class PostShortCode : BaseShortCode
     {
-        NccPostService _nccPostService;
+        readonly NccPostService _nccPostService;
         public PostShortCode(NccPostService nccPostService) : base(
             typeof(BlogController),
             "Post",

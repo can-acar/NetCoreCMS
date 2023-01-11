@@ -32,12 +32,13 @@ namespace Core.Cms.Controllers
     public class CmsMenuController : NccController
     {
         #region Initialization
-        NccMenuService _menuService;
-        NccPageService _pageService;
-        NccPageDetailsService _pageDetailsService;
-        NccPostDetailsService _nccPostDetailsService;
-        NccCategoryDetailsService _nccCategoryDetailsService;
-        NccTagService _nccTagService;
+
+        readonly NccMenuService _menuService;
+        readonly NccPageService _pageService;
+        readonly NccPageDetailsService _pageDetailsService;
+        readonly NccPostDetailsService _nccPostDetailsService;
+        readonly NccCategoryDetailsService _nccCategoryDetailsService;
+        readonly NccTagService _nccTagService;
 
         public CmsMenuController(
             NccMenuService menuService,

@@ -26,7 +26,7 @@ namespace NetCoreCMS.Framework.Modules.Widgets
     {
         private string _htmlContent = "";
         private DateTime _lastRenderTime;
-        private int _minCacheDuration = 10;
+        private readonly int _minCacheDuration = 10;
         private IViewRenderService _viewRenderService;        
         public Type ModuleController { get; set; }
 

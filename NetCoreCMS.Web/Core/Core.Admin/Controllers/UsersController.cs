@@ -38,16 +38,16 @@ namespace Core.Admin.Controllers
     [AdminMenu(Name = "Users", Order = 6, IconCls = "fa-users")]
     public class UsersController : NccController
     {
-        UserManager<NccUser> _userManager;
+        readonly UserManager<NccUser> _userManager;
         RoleManager<NccRole> _roleManager;
         SignInManager<NccUser> _signInManager;
-        NccPermissionService _nccPermissionService;
+        readonly NccPermissionService _nccPermissionService;
         NccPermissionDetailsService _nccPermissionDetailsService;
-        INccUserService _nccUserService;
+        readonly INccUserService _nccUserService;
         IMemoryCache _cache;
 
         //IOptions<IdentityCookieOptions> _identityCookieOptions;
-        IEmailSender _emailSender;
+        readonly IEmailSender _emailSender;
         ISmsSender _smsSender;
         NccStartupService _startupService;
 

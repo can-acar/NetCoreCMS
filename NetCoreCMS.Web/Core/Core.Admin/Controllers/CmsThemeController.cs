@@ -39,13 +39,14 @@ namespace Core.Admin.Controllers
     public class CmsThemeController : NccController
     {
         private IHostingEnvironment _env;
-        ThemeManager _themeManager;
+
+        readonly ThemeManager _themeManager;
         //ILoggerFactory _loggerFactory;
         private readonly string _themePath = "Themes\\";
         private readonly IMediator _mediator;
 
         public INccSettingsService _nccSettingsService;
-        private ILogger<CmsThemeController> _logger;
+        private readonly ILogger<CmsThemeController> _logger;
 
         public CmsThemeController(ThemeManager themeManager, IMediator mediator, ILoggerFactory factory, INccSettingsService nccSettingsService)
         {

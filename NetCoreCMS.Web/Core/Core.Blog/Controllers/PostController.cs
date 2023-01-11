@@ -39,14 +39,15 @@ namespace Core.Blog.Controllers
     public class PostController : NccController
     {
         #region Initialization
-        NccPostService _nccPostService;
-        NccPostDetailsService _nccPostDetailsService;
-        NccCategoryService _nccCategoryService;
-        NccTagService _nccTagService;
-        NccShortCodeProvider _nccShortCodeProvider;
 
-        IMediator _mediator;
-        ILoggerFactory _loggerFactory;
+        readonly NccPostService _nccPostService;
+        readonly NccPostDetailsService _nccPostDetailsService;
+        readonly NccCategoryService _nccCategoryService;
+        readonly NccTagService _nccTagService;
+        readonly NccShortCodeProvider _nccShortCodeProvider;
+
+        readonly IMediator _mediator;
+        readonly ILoggerFactory _loggerFactory;
 
         public PostController(NccPostService nccPostService, NccPostDetailsService nccPostDetailsService, NccCategoryService nccCategoryService, NccTagService nccTagService, NccShortCodeProvider nccShortCodeProvider, IMediator mediator, ILoggerFactory loggerFactory)
         {

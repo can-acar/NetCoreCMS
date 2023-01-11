@@ -44,13 +44,13 @@ namespace Core.Admin.Controllers
     public class CmsModuleController : NccController
     {
         #region Initialization
-        private IHostingEnvironment _env;
-        NccModuleService _moduleService;
-        INccSettingsService _settingsService;
+        private readonly IHostingEnvironment _env;
+        readonly NccModuleService _moduleService;
+        readonly INccSettingsService _settingsService;
         ModuleManager moduleManager;
         //List<IModule> _coreModules;
         //List<IModule> _publicModules;
-        IHostingEnvironment _hostingEnvironment;
+        readonly IHostingEnvironment _hostingEnvironment;
         private readonly IMediator _mediator;
         private readonly ILogger _logger;
         private readonly string _modulePath = "Modules\\";

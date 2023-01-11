@@ -20,7 +20,7 @@ namespace NccSeventeen.Controllers
 {
     public class NccSeventeenController : NccController
     {
-        Dictionary<string, string> style = new Dictionary<string, string>() { { "blue-skin.css", "Blue" }, { "green-skin.css", "Green" }, { "orange-skin.css", "Orange" }, { "red-skin.css", "Red" }, { "white-skin.css", "White" } };
+        readonly Dictionary<string, string> style = new Dictionary<string, string>() { { "blue-skin.css", "Blue" }, { "green-skin.css", "Green" }, { "orange-skin.css", "Orange" }, { "red-skin.css", "Red" }, { "white-skin.css", "White" } };
 
         public NccSeventeenController()
         {

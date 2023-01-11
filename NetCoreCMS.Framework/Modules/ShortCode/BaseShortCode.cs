@@ -12,7 +12,7 @@ namespace NetCoreCMS.Framework.Modules.ShortCode
         private IViewRenderService _viewRenderService;
         public Type ModuleController { get; set; }
         private DateTime _lastRenderTime;
-        private int _minCacheDuration = 10;
+        private readonly int _minCacheDuration = 10;
         private string _htmlContent = "";
 
         public BaseShortCode(Type moduleControllerType, string name, string viewFileName)

@@ -30,7 +30,7 @@ namespace NetCoreCMS.EasyNews.Controllers
     public class NewsCategoryController : NccController
     {
         #region Initialization
-        private CategoryService _categoryService;
+        private readonly CategoryService _categoryService;
         public NewsCategoryController(ILoggerFactory factory, CategoryService categoryService)
         {
             _logger = factory.CreateLogger<NewsCategoryController>();

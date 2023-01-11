@@ -18,7 +18,7 @@ namespace Core.Blog.Widgets
 {
     public class CategoryWidget : Widget
     {
-        NccCategoryService _nccCategoryService;
+        readonly NccCategoryService _nccCategoryService;
         
         bool ShowCategoryHasPost = false;
         bool ShowPostCount = false;
